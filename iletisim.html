@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>İletişim</title>
+</head>
+<body>
+    <form action="formveriler.php" method="POST">
+    <label for="ad-soyad">Ad Soyad</label>
+    <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Adınızı ve Soyadınızı girin" required><br><br>
+
+    <label for="eposta">E-posta</label>
+    <input type="email" id="eposta" name="eposta" placeholder="E-posta adresinizi girin" required><br><br>
+
+    <label for="telefon">Telefon</label>
+    <input type="tel" id="telefon" name="telefon" placeholder="Telefon numaranızı girin" required><br><br>
+
+    <label for="sifre">Şifre</label>
+    <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin" ><br><br>
+    <label for="yas">Yaş</label>
+    <input type="number" id="yas" name="yas" placeholder="Yaşınızı girin" min="18" max="100" ><br><br>
+    <label for="dogum-tarihi">Doğum Tarihi</label>
+    <input type="date" id="dogum-tarihi" name="dogum-tarihi" required><br><br>
+    <input type="time" id="saat" name="saat" required><br><br>
+    <label for="cinsiyet">Cinsiyet</label><br>
+    <input type="radio" id="erkek" name="cinsiyet" value="erkek">
+    <label for="erkek">Erkek</label>
+    <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+    <label for="kadin">Kadın</label>
+    <label for="il">İl Seçin</label>
+    <select id="il" name="il" >
+        <option value="" disabled selected>Bir il seçin</option>
+        <option value="Adana">Adana</option>
+        <option value="Adıyaman">Adıyaman</option>
+        <option value="Afyonkarahisar">Afyonkarahisar</option>
+        <option value="Ağrı">Ağrı</option>
+        <option value="Amasya">Amasya</option>
+        <option value="Ankara">Ankara</option>
+        <option value="Antalya">Antalya</option>
+        <option value="Artvin">Artvin</option>
+        <option value="Aydın">Aydın</option>
+        <option value="Balıkesir">Balıkesir</option>
+        <option value="Bilecik">Bilecik</option>
+        <option value="Bingöl">Bingöl</option>
+        <option value="Bitlis">Bitlis</option>
+        <option value="Bolu">Bolu</option>
+        <option value="Burdur">Burdur</option>
+        <option value="Bursa">Bursa</option>
+        <option value="Çanakkale">Çanakkale</option>
+        <option value="Çorum">Çorum</option>
+        <option value="Denizli">Denizli</option>
+        <option value="Diyarbakır">Diyarbakır</option>
+        <option value="Edirne">Edirne</option>
+        <option value="Elazığ">Elazığ</option>
+        <option value="Erzincan">Erzincan</option>
+        <option value="Erzurum">Erzurum</option>
+        <option value="Eskişehir">Eskişehir</option>
+        <option value="Gaziantep">Gaziantep</option>
+        <option value="Giresun">Giresun</option>
+        <option value="Gümüşhane">Gümüşhane</option>
+        <option value="Hakkâri">Hakkâri</option>
+        <option value="Hatay">Hatay</option>
+        <option value="Iğdır">Iğdır</option>
+        <option value="Isparta">Isparta</option>
+        <option value="İstanbul">İstanbul</option>
+        <option value="İzmir">İzmir</option>
+        <option value="Kahramanmaraş">Kahramanmaraş</option>
+        <option value="Karabük">Karabük</option>
+        <option value="Karaman">Karaman</option>
+        <option value="Kars">Kars</option>
+        <option value="Kastamonu">Kastamonu</option>
+        <option value="Kayseri">Kayseri</option>
+        <option value="Kırıkkale">Kırıkkale</option>
+        <option value="Kırklareli">Kırklareli</option>
+        <option value="Kırşehir">Kırşehir</option>
+        <option value="Kocaeli">Kocaeli</option>
+        <option value="Konya">Konya</option>
+        <option value="Kütahya">Kütahya</option>
+        <option value="Malatya">Malatya</option>
+        <option value="Manisa">Manisa</option>
+        <option value="Mardin">Mardin</option>
+        <option value="Mersin">Mersin</option>
+        <option value="Muğla">Muğla</option>
+        <option value="Muş">Muş</option>
+        <option value="Nevşehir">Nevşehir</option>
+        <option value="Niğde">Niğde</option>
+        <option value="Ordu">Ordu</option>
+        <option value="Osmaniye">Osmaniye</option>
+        <option value="Rize">Rize</option>
+        <option value="Sakarya">Sakarya</option>
+        <option value="Samsun">Samsun</option>
+        <option value="Siirt">Siirt</option>
+        <option value="Sinop">Sinop</option>
+        <option value="Sivas">Sivas</option>
+        <option value="Tekirdağ">Tekirdağ</option>
+        <option value="Tokat">Tokat</option>
+        <option value="Trabzon">Trabzon</option>
+        <option value="Tunceli">Tunceli</option>
+        <option value="Şanlıurfa">Şanlıurfa</option>
+        <option value="Uşak">Uşak</option>
+        <option value="Van">Van</option>
+        <option value="Yalova">Yalova</option>
+        <option value="Yozgat">Yozgat</option>
+        <option value="Zonguldak">Zonguldak</option>
+    </select><br><br>
+<label for ="hobiler">Hobiler</label><br>
+    <input type="checkbox" id="spor" name="hobiler[]" value="Spor">
+    <label for="spor">Spor</label><br>
+    <input type="checkbox" id="müzik" name="hobiler[]" value="Müzik">
+    <label for="müzik">Müzik</label><br>
+    <input type="checkbox" id="resim" name="hobiler[]" value="Resim">
+    <label for="resim">Resim</label><br>
+    <input type="checkbox" id="yazılım" name="hobiler[]" value="Yazılım">
+    <label for="yazılım">Yazılım</label><br>
+    <label for="mesaj">Mesaj</label><br>
+    <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazın" rows="4" required></textarea><br><br>
+    <input type="submit" value="Gönder"><br>
+    <input type="reset" value="Temizle">
+
+</form>
+    
+</body>
+</html>
