@@ -15,7 +15,7 @@ session_start();
 <header>
     <div class="navbar">
         <div class="logo">
-            <h2><a href="index.php">Eren Kısacık</a></h2>
+            <h2><a href="index.php">Eren </a></h2>
         </div>              
         <ul class="navbarlink">
             <li><a href="iletisim.php">İletişim</a></li>  

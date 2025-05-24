@@ -15,7 +15,7 @@ session_start();
         <header>
         <div class="navbar">
             <div class="logo">
-                <h2><a href="index.php">Eren Kısacık</a></h2>
+                <h2><a href="index.php">Eren  </a></h2>
                 </div>              
                 <ul class="navbarlink">
                    <li><a href="iletisim.php">İletişim</a></li>  
@@ -36,7 +36,7 @@ session_start();
     <label for="telefon">Telefon</label>
     <input type="tel" id="telefon" name="telefon" placeholder="Telefon numaranızı girin" ><br><br>
     <label for="yas">Yaş</label>
-    <input type="number" id="yas" name="yas" placeholder="Yaşınızı girin" min="18" max="100" ><br><br>
+    <input type="number" id="yas" name="yas" placeholder="Yaşınızı girin"><br><br>
     <label for="dogum-tarihi">Doğum Tarihi</label>
     <input type="date" id="dogum-tarihi" name="dogum-tarihi" ><br><br>
     <input type="time" class="form-control" id="saat" name="saat" ><br><br>
@@ -199,7 +199,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
         showError("telefon", "Telefon alanı boş bırakılamaz.");
         hasError = true;
     } else {
-        const phonePattern = /^\d{10}$/; // 10 haneli telefon numarası için basit bir kontrol
+        const phonePattern = /^\d{10}$/; 
         if (!phonePattern.test(telefon)) {
             showError("telefon", "Geçerli bir telefon numarası giriniz (10 haneli).");
             hasError = true;
@@ -219,7 +219,6 @@ document.querySelector("form").addEventListener("submit", function(e) {
         hasError = true;
     }
     if (!cinsiyet) {
-        // Cinsiyet radio'larının ilk label'ının üstüne hata mesajı ekle
         const cinsiyetLabel = document.querySelector('label[for="cinsiyet"]');
         if (cinsiyetLabel) {
             const errorElem = document.createElement("div");
@@ -236,7 +235,6 @@ document.querySelector("form").addEventListener("submit", function(e) {
         hasError = true;
     }
     if (hobiler.length === 0) {
-        // Hobiler checkbox'larının ilk label'ının üstüne hata mesajı ekle
         const hobiLabel = document.querySelector('label[for="hobiler"]');
         if (hobiLabel) {
             const errorElem = document.createElement("div");
@@ -297,6 +295,6 @@ document.querySelector("form").addEventListener("submit", function(e) {
     }
   }).mount("#vueApp");
   </script>
- 
+ <?php include("footer.php"); ?>
 </body>
 </html>

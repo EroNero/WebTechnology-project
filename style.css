@@ -13,9 +13,7 @@ body{
     margin: 0;
     padding: 0;
 }
-img{
-    width: 100%;
-}
+
 section{
     padding: 100px;
     background-color: #f4f4f4;
@@ -196,7 +194,7 @@ button:hover {
   margin-bottom: -12px;
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
   form {
     padding: 30px 20px;
@@ -208,17 +206,16 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* Form ile buton arasında boşluk */
+  gap: 20px; 
 }
-/* Checkbox ve label çiftlerini saran kapsayıcı */
+
 .checkbox-wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: 8px; /* alt boşluk */
-  gap: 8px; /* checkbox ile label arasında boşluk */
+  margin-bottom: 8px;
+  gap: 8px; 
 }
 
-/* İstersen label yazı boyutunu, fontunu da ayarla */
 .checkbox-wrapper label {
   cursor: pointer;
   font-weight: 600;
@@ -227,15 +224,15 @@ button:hover {
 label.radio-label {
   display: inline-flex;
   align-items: center;
-  margin-right: 15px; /* aralarındaki boşluk */
+  margin-right: 15px;
   cursor: pointer;
 }
 label.radio-label input[type="radio"] {
-  margin-right: 6px; /* label ile radio arası boşluk */
+  margin-right: 6px; 
 }
 .formverileri {
     max-width: 700px;
-    margin: 60px auto 50px; /* üstte header boşluğu için biraz yukarıdan */
+    margin: 60px auto 50px; 
     background-color: #fff;
     padding: 0px 40px;
     border-radius: 10px;
@@ -268,4 +265,496 @@ label.radio-label input[type="radio"] {
         padding: 25px 20px;
         font-size: 1rem;
     }
+}
+.cv-container {
+    max-width: 900px;
+    margin: 120px auto 50px; 
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.cv-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #3d2a2a;
+    margin-bottom: 40px;
+}
+
+.cv-container h2 {
+    font-size: 1.8rem;
+    color: #c51c1c;
+    margin-bottom: 15px;
+}
+
+.cv-container article {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cv-container ul {
+    padding-left: 20px;
+}
+
+.cv-container ul li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+.cv-container aside {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px 30px;
+    border-left: 5px solid #c51c1c;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.cv-container aside h3 {
+    font-size: 1.5rem;
+    color: #3d2a2a;
+    margin-bottom: 10px;
+}
+
+.cv-container aside p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* Responsive uyum */
+@media (max-width: 768px) {
+    .cv-container {
+        padding: 30px 20px;
+    }
+
+    .cv-container h1 {
+        font-size: 2rem;
+    }
+
+    .cv-container h2 {
+        font-size: 1.5rem;
+    }
+}
+footer {
+    background-color: #3d2a2a;
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-size: 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #c51c1c;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ddd;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.footer-section a {
+    display: inline-block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #c51c1c;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+}
+/* İlgi Alanlarım Sayfası */
+.ilgi-alanlarim {
+    max-width: 900px;
+    margin: 120px auto 40px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.ilgi-alanlarim h1 {
+    font-size: 2.5rem;
+    color: #3d2a2a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Film ve Dizi Bölümü */
+.Film_ve_Diziler,
+.Oynadigim_oyunlar {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #f4f4f4;
+    padding: 30px 40px;
+    border-left: 6px solid #c51c1c;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.Film_ve_Diziler h2,
+.Oynadigim_oyunlar h2 {
+    color: #3d2a2a;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.Film_ve_Diziler ul,
+.Oynadigim_oyunlar ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.Film_ve_Diziler li,
+.Oynadigim_oyunlar li {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+.Film_ve_Diziler li:hover,
+.Oynadigim_oyunlar li:hover {
+    color: #c51c1c;
+    cursor: pointer;
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+    .ilgi-alanlarim,
+    .Film_ve_Diziler,
+    .Oynadigim_oyunlar {
+        padding: 25px 20px;
+        margin: 100px 15px 30px;
+    }
+
+    .ilgi-alanlarim h1 {
+        font-size: 2rem;
+    }
+
+    .Film_ve_Diziler h2,
+    .Oynadigim_oyunlar h2 {
+        font-size: 1.5rem;
+    }
+}/* === Mirasımız Sayfası === */
+.mirasimiz {
+    max-width: 900px;
+    margin: 130px auto 40px;
+    padding: 0px 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.mirasimiz h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #3d2a2a;
+}
+
+/* Justinianus tanıtım bölümü */
+.Tanitim {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 25px;
+    background-color: #f4f4f4;
+    border-left: 5px solid #c51c1c;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.Tanitim h2 {
+    font-size: 1.8rem;
+    color: #3d2a2a;
+    margin-bottom: 20px;
+}
+
+.Tanitim p {
+    color: #444;
+    font-weight: 500;
+}
+
+/* Görsel kutusu */
+.miras-gorsel {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    text-align: center;
+}
+
+.miras-gorsel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.gorsel-aciklama {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mirasimiz,
+    .Tanitim,
+    .miras-gorsel {
+        padding: 25px 20px;
+        margin: 100px 15px 30px;
+    }
+
+    .mirasimiz h2,
+    .Tanitim h2 {
+        font-size: 1.5rem;
+    }
+    /* Şehrim */
+    /* Slider */
+}
+.slider-container {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #fff;
+  position: relative; 
+  height: 400px; 
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%; 
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+.slide img {
+  height: 100%; 
+  width: auto;
+  border-radius: 12px;
+  object-fit: contain; 
+}
+
+/* Slider okları */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(197, 28, 28, 0.85);
+  color: white;
+  font-size: 2rem;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  user-select: none;
+}
+.prev:hover, .next:hover {
+  background-color: #a81818;
+}
+.prev {
+  left: 15px;
+}
+.next {
+  right: 15px;
+}
+.sehir-section {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  font-family: "Open Sans", sans-serif;
+  color: #3d2a2a;
+}
+
+.sehir-baslik {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #c51c1c;
+  padding-bottom: 8px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sehir-tanitim {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
+.gezilecek-baslik {
+  font-size: 1.8rem;
+  color: #c51c1c;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.gezilecek-listesi {
+  list-style-type: square;
+  padding-left: 25px;
+  font-size: 1.15rem;
+  color: #444;
+}
+
+.gezilecek-listesi li {
+  margin-bottom: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.gezilecek-listesi li strong {
+  color: #3d2a2a;
+}
+
+.gezilecek-listesi li:hover {
+  color: #a81818;
+}
+.about-container {
+  max-width: 900px;
+  margin: 120px auto 60px;
+  background: white;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+/* Ana sayfa */
+/* Başlıklar */
+.about-container h1,
+.about-container h2 {
+  color: #c51c1c;
+  margin-bottom: 20px;
+}
+
+/* Paragraflar */
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Hobiler listesi */
+.about-container ul {
+  list-style: disc inside;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Galeri */
+.about-container .gallery {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.about-container .gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.about-container .gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Sosyal medya linkleri */
+.about-container .social-links {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.about-container .social-links a {
+  text-decoration: none;
+  color: #c51c1c;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.about-container .social-links a:hover {
+  color: #7a0e0e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about-container {
+    margin: 100px 15px;
+    padding: 30px 20px;
+  }
+  .about-container .gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about-container .gallery img {
+    width: 100px;
+    height: 70px;
+  }
 }

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +13,9 @@
 </head>
 <body>
         <header>
-        <div class="navbar">
+       <div class="navbar">
             <div class="logo">
-                <h2><a href="index.php">Eren Kısacık</a></h2>
+                <h2><a href="index.php">Eren </a></h2>
                 </div>              
                 <ul class="navbarlink">
                    <li><a href="iletisim.php">İletişim</a></li>  
@@ -33,5 +36,6 @@
         <input type="password" id="password" name="password">
         <br>
         <input type="submit" value="Giriş Yap">
+        
 </body>
 </html>
