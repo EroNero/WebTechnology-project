@@ -1,11 +1,14 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <title>İletişim</title>
 </head>
 <body>
@@ -21,8 +24,8 @@
    <li><a href="sehrim.php">Şehrim</a></li>
    <li><a href="cv.php">CV</a></li>
    <li><a href="loginpage.php">Giriş</a></li>
-                </ul>
     </div>
+    <div class="form-container">
     </header>
     <br><br><br>
     <form action="formveriler.php" method="POST">
@@ -38,10 +41,14 @@
     <input type="date" id="dogum-tarihi" name="dogum-tarihi" ><br><br>
     <input type="time" class="form-control" id="saat" name="saat" ><br><br>
     <label for="cinsiyet">Cinsiyet</label><br>
+    <label class="radio-label">
     <input type="radio" id="erkek" name="cinsiyet" value="erkek">
     <label for="erkek">Erkek</label>
+    </label><br>
+    <label class="radio-label">
     <input type="radio" id="kadin" name="cinsiyet" value="kadin">
     <label for="kadin">Kadın</label><br>
+    </label>
     <label for="il">İl Seçin</label>
     <select id="il" name="il" >
         <option value="" disabled selected>Bir il seçin</option>
@@ -119,20 +126,177 @@
         <option value="Zonguldak">Zonguldak</option>
     </select><br><br>
 <label for ="hobiler">Hobiler</label><br>
-    <input type="checkbox" id="spor" name="hobiler[]" value="Spor">
-    <label for="spor">Spor</label><br>
-    <input type="checkbox" id="müzik" name="hobiler[]" value="Müzik">
-    <label for="müzik">Müzik</label><br>
-    <input type="checkbox" id="resim" name="hobiler[]" value="Resim">
-    <label for="resim">Resim</label><br>
-    <input type="checkbox" id="yazılım" name="hobiler[]" value="Yazılım">
-    <label for="yazılım">Yazılım</label><br>
+<div class="checkbox-wrapper">
+  <input type="checkbox" id="spor" name="hobiler[]" value="Spor">
+  <label for="spor">Spor</label>
+</div>
+<div class="checkbox-wrapper">
+  <input type="checkbox" id="müzik" name="hobiler[]" value="Müzik">
+  <label for="müzik">Müzik</label>
+</div>
+<div class="checkbox-wrapper">
+  <input type="checkbox" id="resim" name="hobiler[]" value="Resim">
+  <label for="resim">Resim</label>
+</div>
+<div class="checkbox-wrapper">
+  <input type="checkbox" id="yazılım" name="hobiler[]" value="Yazılım">
+  <label for="yazılım">Yazılım</label>
+</div>
     <label for="mesaj">Mesaj</label><br>
     <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazın" rows="4" ></textarea><br><br>
     <input type="submit" value="Gönder"><br>
-    <input type="reset" value="Temizle">
-
+    <input type="reset" value="Temizle"><br>   
+    <div id="vueApp">
+    <button type="button" @click="vueKontrolEt">Vue.js ile Kontrol Et</button>
+    </div>
+    </div> 
 </form>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    let errors = [];
+    const adSoyad = document.getElementById("ad-soyad").value.trim();
+    const eposta = document.getElementById("eposta").value.trim();
+    const telefon = document.getElementById("telefon").value.trim();
+    const yas = document.getElementById("yas").value;
+    const dogumTarihi = document.getElementById("dogum-tarihi").value;
+    const saat = document.getElementById("saat").value;
+    const cinsiyet = document.querySelector('input[name="cinsiyet"]:checked');
+    const il = document.getElementById("il").value;
+    const hobiler = document.querySelectorAll('input[name="hobiler[]"]:checked');
+    const mesaj = document.getElementById("mesaj").value.trim();
+    document.querySelectorAll('.input-error').forEach(el => el.textContent = '');
+
+    function showError(inputId, message) {
+        const input = document.getElementById(inputId);
+        if (input) {
+            const errorElem = document.createElement("div");
+            errorElem.className = "input-error";
+            errorElem.style.color = "red";
+            errorElem.style.fontSize = "0.9em";
+            errorElem.textContent = message;
+            input.parentNode.insertBefore(errorElem, input.nextSibling);
+        }
+    }
+
+    let hasError = false;
+
+    if (!adSoyad) {
+        showError("ad-soyad", "Ad Soyad alanı boş bırakılamaz.");
+        hasError = true;
+    }
+    if (!eposta) {
+        showError("eposta", "E-posta alanı boş bırakılamaz.");
+        hasError = true;
+    } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(eposta)) {
+            showError("eposta", "Geçerli bir e-posta adresi giriniz.");
+            hasError = true;
+        }
+    }
+    if (!telefon) {
+        showError("telefon", "Telefon alanı boş bırakılamaz.");
+        hasError = true;
+    } else {
+        const phonePattern = /^\d{10}$/; // 10 haneli telefon numarası için basit bir kontrol
+        if (!phonePattern.test(telefon)) {
+            showError("telefon", "Geçerli bir telefon numarası giriniz (10 haneli).");
+            hasError = true;
+        }
+    }
+    if (!yas) {
+        showError("yas", "Yaş alanı boş bırakılamaz.");
+        hasError = true;
+    }
+    if (!dogumTarihi) {
+        showError("dogum-tarihi", "Doğum tarihi seçilmelidir.");
+        hasError = true;
+    }
     
+    if (!saat) {
+        showError("saat", "Saat seçilmelidir.");
+        hasError = true;
+    }
+    if (!cinsiyet) {
+        // Cinsiyet radio'larının ilk label'ının üstüne hata mesajı ekle
+        const cinsiyetLabel = document.querySelector('label[for="cinsiyet"]');
+        if (cinsiyetLabel) {
+            const errorElem = document.createElement("div");
+            errorElem.className = "input-error";
+            errorElem.style.color = "red";
+            errorElem.style.fontSize = "0.9em";
+            errorElem.textContent = "Cinsiyet seçilmelidir.";
+            cinsiyetLabel.parentNode.insertBefore(errorElem, cinsiyetLabel);
+        }
+        hasError = true;
+    }
+    if (!il) {
+        showError("il", "Bir il seçmelisiniz.");
+        hasError = true;
+    }
+    if (hobiler.length === 0) {
+        // Hobiler checkbox'larının ilk label'ının üstüne hata mesajı ekle
+        const hobiLabel = document.querySelector('label[for="hobiler"]');
+        if (hobiLabel) {
+            const errorElem = document.createElement("div");
+            errorElem.className = "input-error";
+            errorElem.style.color = "red";
+            errorElem.style.fontSize = "0.9em";
+            errorElem.textContent = "En az bir hobi seçmelisiniz.";
+            hobiLabel.parentNode.insertBefore(errorElem, hobiLabel);
+        }
+        hasError = true;
+    }
+    if (!mesaj) {
+        showError("mesaj", "Mesaj alanı boş bırakılamaz.");
+        hasError = true;
+    }
+
+    if (hasError) {
+        e.preventDefault();
+    }
+});
+</script> 
+ <script>
+  const { createApp } = Vue;
+
+  createApp({
+    methods: {
+      vueKontrolEt() {
+        const adSoyad = document.getElementById("ad-soyad").value.trim();
+        const eposta = document.getElementById("eposta").value.trim();
+        const telefon = document.getElementById("telefon").value.trim();
+        const yas = document.getElementById("yas").value;
+        const dogumTarihi = document.getElementById("dogum-tarihi").value;
+        const saat = document.getElementById("saat").value;
+        const cinsiyet = document.querySelector('input[name="cinsiyet"]:checked');
+        const il = document.getElementById("il").value;
+        const hobiler = document.querySelectorAll('input[name="hobiler[]"]:checked');
+        const mesaj = document.getElementById("mesaj").value.trim();
+
+        let mesajlar = [];
+
+        if (!adSoyad) mesajlar.push("Ad Soyad boş.");
+        if (!eposta || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(eposta)) mesajlar.push("Geçersiz e-posta.");
+        if (!telefon || !/^\d{10}$/.test(telefon)) mesajlar.push("Geçersiz telefon.");
+        if (!yas) mesajlar.push("Yaş gerekli.");
+        if (!dogumTarihi) mesajlar.push("Doğum tarihi gerekli.");
+        if (!saat) mesajlar.push("Saat gerekli.");
+        if (!cinsiyet) mesajlar.push("Cinsiyet gerekli.");
+        if (!il) mesajlar.push("İl gerekli.");
+        if (hobiler.length === 0) mesajlar.push("En az bir hobi seçilmeli.");
+        if (!mesaj) mesajlar.push("Mesaj alanı boş.");
+
+        if (mesajlar.length > 0) {
+          alert("Vue.js Kontrol Sonuçları:\n\n" + mesajlar.join("\n"));
+        } else {
+          alert("Vue.js: Tüm alanlar geçerli.");
+        }
+      }
+    }
+  }).mount("#vueApp");
+  </script>
+ 
 </body>
 </html>

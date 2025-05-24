@@ -10,6 +10,8 @@ html{
 }
 body{
     font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 img{
     width: 100%;
@@ -38,6 +40,8 @@ section{
 
 header{
    background-color: #3d2a2a;
+   top: 0;
+   left: 0;
    border-bottom: 1px solid #c51c1c;
    position: fixed;
    width: 100%;
@@ -48,7 +52,8 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 0 0;
+    padding-bottom: 10px;
 }
 .navbarlink{
     display: flex;
@@ -68,4 +73,199 @@ header{
     font-size: 30px;
     color: #fff;
     font-weight: bold;
+}
+.input-error {
+    color: red;
+    font-size: 0.9em;
+}
+footer{
+    background-color: #3d2a2a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  color: #444;
+  font-size: 1.05rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="password"]:focus,   
+select:focus,
+textarea:focus {
+  border-color: #2978f0;
+  box-shadow: 0 0 6px rgba(41, 120, 240, 0.5);
+  outline: none;
+}
+
+/* Radio ve Checkboxlar */
+input[type="radio"],
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  user-select: none;
+  margin-right: 18px;
+  vertical-align: middle;
+}
+
+/* Hobiler bölümü */
+.checkbox-label label[for="hobiler"] {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #444;
+  display: block;
+}
+
+/* Butonlar */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  margin-top: 30px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  background-color: #2978f0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover {
+  background-color: #1c53c4;
+}
+
+/* Hata mesajları */
+.input-error {
+  color: #d93025;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  margin-bottom: -12px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  form {
+    padding: 30px 20px;
+  }
+}
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Form ile buton arasında boşluk */
+}
+/* Checkbox ve label çiftlerini saran kapsayıcı */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* alt boşluk */
+  gap: 8px; /* checkbox ile label arasında boşluk */
+}
+
+/* İstersen label yazı boyutunu, fontunu da ayarla */
+.checkbox-wrapper label {
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+}
+label.radio-label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px; /* aralarındaki boşluk */
+  cursor: pointer;
+}
+label.radio-label input[type="radio"] {
+  margin-right: 6px; /* label ile radio arası boşluk */
+}
+.formverileri {
+    max-width: 700px;
+    margin: 60px auto 50px; /* üstte header boşluğu için biraz yukarıdan */
+    background-color: #fff;
+    padding: 0px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.formverileri h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #3d2a2a;
+}
+
+.formverileri p {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.formverileri strong {
+    color: #c51c1c;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .formverileri {
+        margin: 100px 20px 30px;
+        padding: 25px 20px;
+        font-size: 1rem;
+    }
 }
