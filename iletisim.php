@@ -295,6 +295,9 @@ document.querySelector("form").addEventListener("submit", function(e) {
     }
   }).mount("#vueApp");
   </script>
+  <div class="footer">
  <?php include("footer.php"); ?>
+ </div>
 </body>
+
 </html>

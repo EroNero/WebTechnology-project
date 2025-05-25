@@ -41,17 +41,46 @@
             </ul>
         </div>
         <div class="Oynadigim_oyunlar">
+            <h2>Oyunlar</h2>
              <ul>
-                <li>League Of Legends<a href=""></a>/li>
+                <li>League Of Legends<a href=""></a></li>
                 <li>Repo<a href=""></a></li>
                 <li>Drakensang<a href=""></a></li>
             </ul>
         </div>
-        <section id="film-api">
-            <h2>Popüler Filmler</h2>
-            <div id="film-container"></div>
-        </section>
-    
+        <div class="hava">
+            <h2>Sakarya Hava Durumu</h2>
+<?php
+// API URL
+$url = "https://api.open-meteo.com/v1/forecast?latitude=40.8121915&longitude=30.4419338&current=temperature_2m";
+
+// cURL işlemi başlat
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+// JSON verisini çözümler
+$data = json_decode($response, true);
+
+// Verileri al
+$temperature = $data['current']['temperature_2m'];
+$time = $data['current']['time'];
+$unit = $data['current_units']['temperature_2m'];
+$locationLat = $data['latitude'];
+$locationLon = $data['longitude'];
+$timezone = $data['timezone'];
+
+?>
+<section class="weather-box">
+    <div class="temperature"><?php echo $temperature . " " . $unit ?></div>
+    <div class="meta">
+        <p><strong>Zaman:</strong> <?php echo $time ?> (<?php echo $timezone ?>)</p>
+        <p><strong>Konum:</strong> <?php echo $locationLat ?>, <?php echo $locationLon ?></p>
+    </div>
+</section>
+        </div>
     <?php include("footer.php"); ?>
 </body>
 </html>

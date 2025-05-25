@@ -758,3 +758,28 @@ footer {
     height: 70px;
   }
 }
+ section.weather-box {
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .weather-box .temperature {
+        font-size: 42px;
+        font-weight: bold;
+        color: #007BFF;
+    }
+
+    .weather-box .meta {
+        font-size: 16px;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    .weather-box .meta p {
+        margin: 4px 0;
+    }
