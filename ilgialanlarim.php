@@ -47,6 +47,11 @@
                 <li>Drakensang<a href=""></a></li>
             </ul>
         </div>
+        <section id="film-api">
+            <h2>Popüler Filmler</h2>
+            <div id="film-container"></div>
+        </section>
+    
     <?php include("footer.php"); ?>
 </body>
 </html>
