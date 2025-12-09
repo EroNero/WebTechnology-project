@@ -3,8 +3,8 @@ session_start();
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-$valid_username = 'b241210003@sakarya.edu.tr';
-$valid_password = 'b241210003';
+$valid_username = 'a123123123@s.e.tr';
+$valid_password = 'a123123123';
 if ($username === $valid_username && $password === $valid_password) {
     echo "<script>
         alert('Hoş geldiniz " . htmlspecialchars($valid_password) . "!');
